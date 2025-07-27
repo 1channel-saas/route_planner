@@ -1,8 +1,7 @@
 {
   "version": 2,
-  "buildCommand": false,
+  "buildCommand": null,
   "framework": null,
-  "public": true,
   "cleanUrls": true,
   "trailingSlash": false
 }
