@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx http-server . -p 8080 -o -c-1",
     "dev": "npx http-server . -p 8080 -c-1",
-    "build": "node -e \"const fs=require('fs');const path=require('path');function copyDir(src,dest){fs.mkdirSync(dest,{recursive:true});fs.readdirSync(src).forEach(f=>{const s=path.join(src,f);const d=path.join(dest,f);fs.statSync(s).isDirectory()?copyDir(s,d):fs.copyFileSync(s,d)});}copyDir('public','dist');copyDir('src','dist/src');\""
+    "build": "node build.js"
   },
   "keywords": [
     "route-optimization",
