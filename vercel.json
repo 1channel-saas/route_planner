@@ -1,3 +1,6 @@
 {
-  "outputDirectory": "."
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": "./",
+  "cleanUrls": true,
+  "trailingSlash": false
 }
