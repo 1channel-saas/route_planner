@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Viewer - Field Team Journey Planner</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/route-viewer.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📍 Route Visualization</h1>
+            <div class="tagline">View your optimized journey on the map</div>
+            <a href="index.html" class="back-link">← Back to Planner</a>
+        </div>
+
+        <div class="controls-container">
+            <div class="selection-controls">
+                <div class="control-group">
+                    <label for="userSelect">Select User:</label>
+                    <select id="userSelect" class="form-select">
+                        <option value="">Choose a user...</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="daySelect">Select Day:</label>
+                    <select id="daySelect" class="form-select" disabled>
+                        <option value="">Choose a day...</option>
+                    </select>
+                </div>
+                <button id="showRouteBtn" class="show-route-btn" disabled>
+                    🗺️ Show Route on Map
+                </button>
+            </div>
+
+            <div class="route-summary" id="routeSummary" style="display: none;">
+                <h3>Route Summary</h3>
+                <div class="summary-content">
+                    <p><strong>Day Start:</strong> <span id="dayStart">-</span></p>
+                    <p><strong>Day End:</strong> <span id="dayEnd">-</span></p>
+                    <p><strong>Total Outlets:</strong> <span id="totalOutlets">0</span></p>
+                    <p><strong>Total Distance:</strong> <span id="totalDistance">0</span> km</p>
+                    <p><strong>Travel Time:</strong> <span id="travelTime">0</span></p>
+                    <p><strong>Store Time:</strong> <span id="storeTime">0</span></p>
+                    <p><strong>Total Duration:</strong> <span id="totalDuration">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-placeholder" id="mapPlaceholder">
+                <div class="placeholder-content">
+                    <span class="placeholder-icon">🗺️</span>
+                    <p>Select a user and day to view the route</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="route-details" id="routeDetails" style="display: none;">
+            <h3>📋 Visit Order</h3>
+            <div class="outlets-list" id="outletsList"></div>
+        </div>
+    </div>
+
+    <!-- Google Maps API - Replace YOUR_API_KEY with actual key -->
+    <script>
+        // This will be set by the main app when loading the page
+        window.GOOGLE_MAPS_API_KEY = localStorage.getItem('gmaps_api_key') || 'YOUR_API_KEY';
+    </script>
+    <script async defer id="google-maps-script"></script>
+    <script src="src/js/route-viewer.js?v=4"></script>
+</body>
+</html>
