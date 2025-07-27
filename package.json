@@ -1,0 +1,23 @@
+{
+  "name": "field-team-journey-planner",
+  "version": "1.0.0",
+  "description": "Smart route optimization application for field teams with realistic travel time constraints",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8080 -o -c-1",
+    "dev": "npx http-server . -p 8080 -c-1",
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": [
+    "route-optimization",
+    "journey-planner",
+    "field-team",
+    "logistics"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Team Journey Planner</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Field Team Journey Planner</h1>
+            <div class="tagline">Smart route optimization with realistic travel time constraints!</div>
+            <div class="subtitle">AI-powered journey planning considering actual travel times and daily limits</div>
+        </div>
+
+        <div class="form-container">
+            <div class="requirements">
+                <h3>📋 File Requirements</h3>
+                <ul>
+                    <li><strong>Sheet 1 - 'Outlets':</strong> Any variation of outlet code, latitude, longitude, visit frequency</li>
+                    <li><strong>Sheet 2 - 'Users':</strong> Any variation of user name, start location, end location, week off day</li>
+                    <li>Application will automatically detect column variations</li>
+                    <li>Coordinates should be in decimal degrees format</li>
+                </ul>
+            </div>
+
+            <div class="travel-params">
+                <h4>🚗 Travel Time Calculations</h4>
+                <p>• Linear distance converted to road distance (×1.3 factor)</p>
+                <p>• Default average speed: 25 km/hr (city conditions with traffic)</p>
+                <p>• Daily time constraint: Employee working hours minus outlet visit times</p>
+                <p>• Route optimization considers both distance and time feasibility</p>
+            </div>
+
+            <form id="plannerForm">
+                <div class="form-group">
+                    <label for="excelFile">📁 Upload Excel File</label>
+                    <div class="file-input-wrapper">
+                        <div class="file-input-display" id="fileInputDisplay">
+                            📎 Click here to select your Excel file or drag & drop
+                        </div>
+                        <input type="file" id="excelFile" accept=".xlsx,.xls" required>
+                    </div>
+                    <div class="file-info" id="fileInfo"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="avgTime">⏱️ Average time per outlet (minutes)</label>
+                        <input type="number" id="avgTime" min="15" max="240" value="60" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="avgSpeed">🚗 Average travel speed (km/hr)</label>
+                        <input type="number" id="avgSpeed" min="10" max="60" value="25" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="generate-btn" id="generateBtn">
+                    🎯 Generate Realistic Journey Plan
+                </button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <div>Optimizing routes with travel time constraints... Please wait</div>
+            </div>
+
+            <div class="message" id="message"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="../src/js/journey-planner.js?v=9"></script>
+</body>
+</html>
