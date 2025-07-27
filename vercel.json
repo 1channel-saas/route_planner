@@ -1,6 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "echo 'No build needed'",
-  "outputDirectory": ".",
-  "installCommand": "npm install"
+  "buildCommand": false,
+  "framework": null,
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false
 }
